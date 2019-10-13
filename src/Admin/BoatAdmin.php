@@ -15,7 +15,7 @@ final class BoatAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper->add('name', TextType::class);
-        $formMapper->add('length', TextType::class);
+        $formMapper->add('length', IntegerType::class);
         $formMapper->add('year', IntegerType::class);
         $formMapper->add('color', ColorType::class);
 
@@ -34,7 +34,6 @@ final class BoatAdmin extends AbstractAdmin
         $listMapper->addIdentifier('name');
         $listMapper->add('length');
         $listMapper->add('year');
-//        $listMapper->add('color');
         $listMapper->add('color', 'string', ['template' => 'list_color.html.twig']);
 
     }
