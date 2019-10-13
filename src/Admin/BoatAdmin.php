@@ -18,7 +18,6 @@ final class BoatAdmin extends AbstractAdmin
         $formMapper->add('length', IntegerType::class);
         $formMapper->add('year', IntegerType::class);
         $formMapper->add('color', ColorType::class);
-
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -35,6 +34,5 @@ final class BoatAdmin extends AbstractAdmin
         $listMapper->add('length');
         $listMapper->add('year');
         $listMapper->add('color', 'string', ['template' => 'list_color.html.twig']);
-
     }
 }
