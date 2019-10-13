@@ -25,3 +25,9 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    admin.boat:
+        class: App\Admin\BoatAdmin
+        arguments: [~, App\Entity\Boat, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Boat }
