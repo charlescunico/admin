@@ -2,7 +2,7 @@
 
 ## About
 
-Consists of a full CRUD functionality made with [Symfony] and [Sonata Admin], for a [Doctrine] entity called Boat.
+This web app consists of a full CRUD functionality made with [Symfony] and [Sonata Admin], for a [Doctrine] entity called Boat.
 
 ## Installation
 
