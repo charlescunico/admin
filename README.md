@@ -10,6 +10,10 @@ Clone or download this repository and execute `composer install`
 
 Execute `php bin/console doctrine:migrations:migrate` to create the entity.
 
+## Analyse
+
+Execute static analyse with `php vendor/bin/phpstan analyse app -l 7`
+
 ## Run
 
 Execute `php bin/console server:run` and open in your browser at `http://localhost:8000/admin`
