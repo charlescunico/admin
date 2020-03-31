@@ -1,0 +1,30 @@
+name: Symfony
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  symfony-tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install dependencies
+      run: composer install -q --no-ansi --no-interaction --no-suggest --no-progress --prefer-dist
+
+    - name: Execute migrations
+      run: bin/console doctrine:migrations:migrate -q --no-ansi --no-interaction --no-debug
+
+    # - name: Run test suite
+    #   run: composer run-script test
+
+    - name: Execute static analyse via PHPStan
+      run: vendor/bin/phpstan analyse src -l 7
